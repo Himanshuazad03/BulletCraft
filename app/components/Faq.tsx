@@ -94,11 +94,7 @@ export default function Faq() {
           })}
         </div>
 
-        {/* Footer help callout */}
-        <div className="mt-12 text-center text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5 bg-slate-50 border border-slate-200/50 py-3.5 px-6 rounded-full max-w-md mx-auto">
-          <HelpCircle className="w-4.5 h-4.5 text-sky-500 shrink-0" />
-          <span>Have another question? Get in touch at <span className="text-slate-800 font-bold hover:underline cursor-pointer">support@resumebullet.com</span></span>
-        </div>
+        
 
       </div>
     </section>

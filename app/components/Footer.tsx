@@ -90,7 +90,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <span className="text-xs font-bold text-slate-800 uppercase tracking-widest">Connect</span>
               <a
-                href="https://github.com"
+                href="https://github.com/Himanshuazad03/BulletCraft"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-slate-500 hover:text-sky-600 transition-colors font-medium cursor-pointer flex items-center gap-1.5"
@@ -99,7 +99,7 @@ export default function Footer() {
                 GitHub
               </a>
               <a
-                href="mailto:support@resumebullet.com"
+                href="mailto:himanshuazad05@gmail.com"
                 className="text-xs text-slate-500 hover:text-sky-600 transition-colors font-medium cursor-pointer flex items-center gap-1.5"
               >
                 <Mail className="w-3.5 h-3.5" />
