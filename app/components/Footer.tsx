@@ -32,10 +32,10 @@ export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200/60 py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 border-b border-slate-200/50 pb-12">
-          
+        <div className="flex flex-col md:flex-row justify-between gap-10 border-b border-slate-200/50 pb-12">
+
           {/* Brand Col */}
-          <div className="md:col-span-5 flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             <a
               href="#"
               onClick={(e) => handleScrollTo(e, "#")}
@@ -107,16 +107,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Recruiter Quote Block */}
-          <div className="md:col-span-3 bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm flex flex-col justify-between">
-            <span className="text-[10px] font-bold text-sky-600 uppercase tracking-wider">Recruiter Insight</span>
-            <p className="text-xxs text-slate-500 leading-relaxed font-semibold italic mt-2">
-              \"Recruiters scan resumes in 6 seconds. Clean bullet structures with active verbs make achievements pop instantly.\"
-            </p>
-            <span className="text-xxs font-bold text-slate-700 mt-3">— Technical Recruiter, Google</span>
-          </div>
-
         </div>
 
         {/* Footer Meta Row */}

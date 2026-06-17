@@ -5,7 +5,6 @@ import Trust from "./components/Trust";
 import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
 import BeforeAfter from "./components/BeforeAfter";
-import LiveDemo from "./components/LiveDemo";
 import Testimonials from "./components/Testimonials";
 import Faq from "./components/Faq";
 import FinalCta from "./components/FinalCta";
@@ -14,8 +13,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="flex-1 w-full overflow-hidden">
+      <main className="flex-1 w-full">
         {/* Hero Section */}
         <Hero />
 
@@ -30,9 +28,6 @@ export default function Home() {
 
         {/* Before vs After Section */}
         <BeforeAfter />
-
-        {/* Live Demo Section */}
-        <LiveDemo />
 
         {/* Testimonials Section */}
         <Testimonials />

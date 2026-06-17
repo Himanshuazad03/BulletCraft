@@ -1,18 +1,18 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Play, CheckCircle2, ChevronRight, Code2 } from "lucide-react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Play,
+  CheckCircle2,
+  ChevronRight,
+  Code2,
+  Mail,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const handleScrollToDemo = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const demo = document.querySelector("#live-demo");
-    if (demo) {
-      demo.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,7 +49,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden bg-white">
+    <section className="relative pt-32 pb-24 md:pt-24 md:pb-32 overflow-hidden bg-white">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-dot-pattern pointer-events-none opacity-80" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-r from-sky-200/30 to-blue-200/20 rounded-full blur-[120px] pointer-events-none" />
@@ -61,13 +61,19 @@ export default function Hero() {
           animate="visible"
           className="flex flex-col items-center text-center max-w-4xl mx-auto"
         >
-          {/* Badge */}
+          {/* Badges Row */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-1.5 bg-sky-50 border border-sky-100/80 px-3 py-1 rounded-full text-xs font-semibold text-sky-700 mb-6 shadow-sm shadow-sky-500/5"
+            className="flex flex-wrap items-center justify-center gap-3 mb-6"
           >
-            <span className="flex h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
-            Designed for Tech Professionals & Recruiters
+            <a
+              href="mailto:himanshuazad05@gmail.com"
+              className="inline-flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200/80 px-3 py-1 rounded-full text-xs font-semibold text-slate-700 shadow-sm transition-all hover:translate-y-[-0.5px] cursor-pointer"
+            >
+              <Mail className="w-3.5 h-3.5 text-sky-500" />
+              <span className="font-bold text-sky-600">Created by:</span>{" "}
+              Himanshu Azad • himanshuazad05@gmail.com
+            </a>
           </motion.div>
 
           {/* Headline */}
@@ -87,7 +93,8 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg md:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed mb-10"
           >
-            Generate professional resume achievements, LinkedIn-ready descriptions, and interview talking points in seconds.
+            Generate professional resume achievements, LinkedIn-ready
+            descriptions, and interview talking points in seconds.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -95,22 +102,13 @@ export default function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 mb-16 w-full sm:w-auto px-4 justify-center"
           >
-            <a
-              href="#live-demo"
-              onClick={handleScrollToDemo}
+            <Link
+              href="/demo"
               className="inline-flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200 shadow-lg shadow-sky-500/20 hover:shadow-sky-500/35 hover:translate-y-[-1.5px] cursor-pointer"
             >
               Generate Free Bullets
               <ArrowRight className="w-5 h-5" />
-            </a>
-            <a
-              href="#live-demo"
-              onClick={handleScrollToDemo}
-              className="inline-flex items-center justify-center gap-2 bg-slate-50 border border-slate-200/80 hover:bg-slate-100 text-slate-800 px-8 py-4 rounded-xl font-bold transition-all duration-200 cursor-pointer hover:border-slate-300"
-            >
-              <Play className="w-4 h-4 fill-slate-800 text-slate-800" />
-              View Demo
-            </a>
+            </Link>
           </motion.div>
 
           {/* Hero Visual Mockup */}
@@ -137,10 +135,16 @@ export default function Hero() {
                 Your Draft Project Description
               </div>
               <div className="bg-white border border-slate-200/80 rounded-xl p-5 min-h-[160px] text-slate-600 text-sm leading-relaxed shadow-inner font-medium">
-                <p className="mb-2 text-slate-400 font-normal">Project Title: E-commerce Website</p>
-                <p className="mb-2 text-slate-400 font-normal">Tech: React, Node, MongoDB, Stripe</p>
+                <p className="mb-2 text-slate-400 font-normal">
+                  Project Title: E-commerce Website
+                </p>
+                <p className="mb-2 text-slate-400 font-normal">
+                  Tech: React, Node, MongoDB, Stripe
+                </p>
                 <p className="text-slate-700">
-                  I built an e-commerce website using React and Node.js. It had a login page and a checkout. I made it faster. It listed about 10k items.
+                  I built an e-commerce website using React and Node.js. It had
+                  a login page and a checkout. I made it faster. It listed about
+                  10k items.
                 </p>
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -152,7 +156,9 @@ export default function Hero() {
               <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-slate-400">
                 <span>Word count: 32</span>
                 <span>•</span>
-                <span className="text-amber-500 font-semibold">Impact Score: Low</span>
+                <span className="text-amber-500 font-semibold">
+                  Impact Score: Low
+                </span>
               </div>
             </div>
 
@@ -180,16 +186,18 @@ export default function Hero() {
                     >
                       <ChevronRight className="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
                       <p>
-                        {bullet.text.split(bullet.metric).map((part, i, arr) => (
-                          <React.Fragment key={i}>
-                            {part}
-                            {i < arr.length - 1 && (
-                              <span className="font-bold text-slate-900 border-b border-sky-200 bg-sky-50/50 px-1 rounded-sm">
-                                {bullet.metric}
-                              </span>
-                            )}
-                          </React.Fragment>
-                        ))}
+                        {bullet.text
+                          .split(bullet.metric)
+                          .map((part, i, arr) => (
+                            <React.Fragment key={i}>
+                              {part}
+                              {i < arr.length - 1 && (
+                                <span className="font-bold text-slate-900 border-b border-sky-200 bg-sky-50/50 px-1 rounded-sm">
+                                  {bullet.metric}
+                                </span>
+                              )}
+                            </React.Fragment>
+                          ))}
                       </p>
                     </motion.div>
                   ))}

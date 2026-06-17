@@ -1,17 +1,11 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function FinalCta() {
-  const handleScrollToDemo = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const demo = document.querySelector("#live-demo");
-    if (demo) {
-      demo.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
@@ -42,14 +36,13 @@ export default function FinalCta() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-            <a
-              href="#live-demo"
-              onClick={handleScrollToDemo}
+            <Link
+              href="/demo"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-200 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 hover:translate-y-[-1px] cursor-pointer"
             >
               Generate Resume Bullets
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
 
           <div className="mt-8 text-xs text-slate-500 font-medium">

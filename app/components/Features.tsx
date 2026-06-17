@@ -136,18 +136,7 @@ export default function Features() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-50 flex items-center text-xs font-bold text-slate-400 group-hover:text-sky-500 transition-colors">
-                  Learn more
-                  <svg
-                    className="w-4 h-4 ml-1 transform group-hover:translate-x-0.5 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
+                
               </motion.div>
             );
           })}
